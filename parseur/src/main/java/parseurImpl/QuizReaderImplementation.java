@@ -77,7 +77,7 @@ public class QuizReaderImplementation implements QuizReader {
 		boolean finReponse = false;
 		String intituleReponse = "";
 		Reponse reponse = new Reponse();
-
+ 
 		while ((characterCourant = flux.read()) != -1) {
 			if (characterCourant == '-' && !debutReponse) {
 				debutReponse = true;
