@@ -14,7 +14,7 @@ public class Reponse {
 
 	public boolean isCorrect() {
 		return isCorrect;
-	} 
+	}
 
 	public void setCorrect(boolean isCorrect) {
 		this.isCorrect = isCorrect;

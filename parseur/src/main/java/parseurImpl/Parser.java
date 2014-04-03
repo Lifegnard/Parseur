@@ -6,6 +6,7 @@ import java.util.List;
 
 public class Parser {
 	QuizReaderImpl r = new QuizReaderImpl();
+
 	public void parse(Reader reader) throws Exception {
 		Question nouvelleQuestion = new Question();
 		List<Reponse> propositionsDeReponses = new ArrayList<Reponse>();

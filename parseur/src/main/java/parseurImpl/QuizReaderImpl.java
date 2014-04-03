@@ -3,7 +3,7 @@ package parseurImpl;
 import java.io.IOException;
 import java.io.Reader;
 
-public class QuizReaderImpl implements QuizReader{
+public class QuizReaderImpl implements QuizReader {
 
 	public String lireIntitule(Reader flux) throws Exception {
 		int characterCourant;
@@ -21,7 +21,8 @@ public class QuizReaderImpl implements QuizReader{
 				intitule += characterCourant;
 			}
 		}
-		throw new Exception("Probleme de syntaxe dans la construction de la question.");
+		throw new Exception(
+				"Probleme de syntaxe dans la construction de la question.");
 	}
 
 	public String lireTypeQuestion(Reader flux) throws Exception {
@@ -40,7 +41,8 @@ public class QuizReaderImpl implements QuizReader{
 				type += characterCourant;
 			}
 		}
-		throw new Exception("Probleme de syntaxe dans la construction de la question.");
+		throw new Exception(
+				"Probleme de syntaxe dans la construction de la question.");
 	}
 
 	public Reponse lireReponse(Reader flux) throws Exception {
@@ -67,6 +69,5 @@ public class QuizReaderImpl implements QuizReader{
 		}
 		return null;
 	}
-
 
 }
