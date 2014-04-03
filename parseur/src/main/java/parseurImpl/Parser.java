@@ -19,7 +19,7 @@ public class Parser {
 
 	public QuizReaderImpl getpReader() {
 		return pReader;
-	}
+	} 
 
 
 	public void parse(Reader reader) throws Exception {

@@ -36,5 +36,5 @@ public class TestParser {
 		assertEquals(null,parser.getQuestion().getPropositionReponses());
 		assertFalse(parser.getpReader().equals(null));
 	}
-
+ 
 }
