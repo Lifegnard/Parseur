@@ -25,6 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2014</copyright>
     <item>
+<<<<<<< HEAD
       <title>File: 28,
              Errors: 373,
              Warnings: 0,
@@ -280,6 +281,305 @@ under the License.
                 </td>
                 <td>
                   32
+=======
+      <title>File: 31,
+             Errors: 563,
+             Warnings: 0,
+             Infos: 0
+      </title>
+            <link>${project.url}/checkstyle.html</link>
+      <description>
+        <p>Click <a href="${project.url}/checkstyle.html">here</a> for the full Checkstyle report.</p>
+
+        <table summary="Files" boder="1">
+          <thead>
+            <tr>
+              <th>Files</th>
+              <th style="width:30px;"><abbr title="Info">I</abbr></th>
+              <th style="width:30px;"><abbr title="Warning">W</abbr></th>
+              <th style="width:30px;"><abbr title="Error">E</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#org.tsaap.questions.impl.gift.GiftReaderNotEscapedCharacterException.java">org/tsaap/questions/impl/gift/GiftReaderNotEscapedCharacterException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  4
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#org.tsaap.questions.UserAnswerBlock.java">org/tsaap/questions/UserAnswerBlock.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  7
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#org.tsaap.questions.UserResponseException.java">org/tsaap/questions/UserResponseException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#org.tsaap.questions.QuestionBlock.java">org/tsaap/questions/QuestionBlock.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#parseurImpl.Reponse.java">parseurImpl/Reponse.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  44
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#org.tsaap.questions.impl.gift.GiftUserResponseAnswerNotFoundInChoiceList.java">org/tsaap/questions/impl/gift/GiftUserResponseAnswerNotFoundInChoiceList.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#org.tsaap.questions.impl.gift.GiftQuizContentHandler.java">org/tsaap/questions/impl/gift/GiftQuizContentHandler.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  49
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#org.tsaap.questions.impl.gift.GiftUserResponseAnswerBlockListSizeIsNotValidInResponse.java">org/tsaap/questions/impl/gift/GiftUserResponseAnswerBlockListSizeIsNotValidInResponse.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#org.tsaap.questions.QuizContentHandler.java">org/tsaap/questions/QuizContentHandler.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  33
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#org.tsaap.questions.QuizReader.java">org/tsaap/questions/QuizReader.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  6
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#parseurImpl.QuizReaderImplementation.java">parseurImpl/QuizReaderImplementation.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  100
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#org.tsaap.questions.impl.DefaultUserAnswerBlock.java">org/tsaap/questions/impl/DefaultUserAnswerBlock.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  10
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#org.tsaap.questions.impl.DefaultQuiz.java">org/tsaap/questions/impl/DefaultQuiz.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  7
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#org.tsaap.questions.impl.gift.GiftQuestionService.java">org/tsaap/questions/impl/gift/GiftQuestionService.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  29
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#org.tsaap.questions.Question.java">org/tsaap/questions/Question.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  11
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#org.tsaap.questions.impl.DefaultAnswer.java">org/tsaap/questions/impl/DefaultAnswer.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  38
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#org.tsaap.questions.AnswerBlock.java">org/tsaap/questions/AnswerBlock.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#org.tsaap.questions.impl.DefaultAnswerBlock.java">org/tsaap/questions/impl/DefaultAnswerBlock.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  7
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#org.tsaap.questions.impl.DefaultQuestion.java">org/tsaap/questions/impl/DefaultQuestion.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  32
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#parseurImpl.Question.java">parseurImpl/Question.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  46
+>>>>>>> branch 'master' of https://github.com/Lifegnard/Parseur.git
                 </td>
               </tr>
                           <tr>

@@ -20,7 +20,6 @@ package org.tsaap.questions;
  * @author franck Silvestre
  */
 public class QuizReaderException extends Exception {
-
     public QuizReaderException(String message) {
         super(message);
     }
