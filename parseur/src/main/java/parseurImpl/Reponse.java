@@ -14,7 +14,7 @@ public class Reponse {
 
 	public boolean isCorrect() {
 		return isCorrect;
-	} 
+	}
 
 	public void setCorrect(boolean isCorrect) {
 		this.isCorrect = isCorrect;
@@ -28,6 +28,10 @@ public class Reponse {
 	public Reponse() {
 		this.reponse = "";
 		this.isCorrect = false;
+	}
+
+	public String toString() {
+		return this.reponse + " - correcte : " + this.isCorrect;
 	}
 
 }

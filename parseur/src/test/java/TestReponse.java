@@ -1,57 +1,57 @@
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import parseurImpl.Reponse;
 
-
 public class TestReponse {
+	private Reponse r;
+
+	@Before
+	public void setUp() throws Exception {
+		this.r = new Reponse("Test", true);
+	}
 
 	@Test
 	public void testGetReponse() {
-		Reponse r=new Reponse("Test Réponse",true);
-		assertEquals("Test Réponse",r.getReponse());
+		assertEquals("Test", this.r.getReponse());
 	}
-	
-	
+
 	@Test
-	
-	public void testSetReponse(){
-		Reponse r=new Reponse("Test Réponse",true);
-		r.setReponse("set reponse");
-		assertEquals("set reponse",r.getReponse());
+	public void testSetReponse() {
+		this.r.setReponse("set reponse");
+		assertEquals("set reponse", this.r.getReponse());
 	}
-	
+
 	@Test
-	public void testIsCorrect(){
-		Reponse rtrue=new Reponse("Test reponse",true);
-		Reponse rfalse=new Reponse("Test 2 reponse",false);
-		assertEquals(true,rtrue.isCorrect());
-		assertEquals(false,rfalse.isCorrect());
+	public void testIsCorrect() {
+		Reponse rtrue = new Reponse("Test reponse correct", true);
+		Reponse rfalse = new Reponse("Test reponse non correct", false);
+		assertEquals(true, rtrue.isCorrect());
+		assertEquals(false, rfalse.isCorrect());
 	}
-	
+
 	@Test
-	public void testSetCorrect(){
-		Reponse r=new Reponse("Test",true);
-		r.setCorrect(false);
-		assertEquals(false,r.isCorrect());
-		r.setCorrect(true);
-		assertEquals(true,r.isCorrect());
-		
+	public void testSetCorrect() {
+		this.r.setCorrect(false);
+		assertEquals(false, this.r.isCorrect());
+
+		this.r.setCorrect(true);
+		assertEquals(true, this.r.isCorrect());
 	}
+
 	@Test
-	public void testConstructeurAvecParametre(){
-		Reponse r=new Reponse("Test",true);
-		assertEquals(r.getReponse(),"Test");
-		assertEquals(r.isCorrect(),true);
+	public void testConstructeurAvecParametre() {
+		assertEquals(this.r.getReponse(), "Test");
+		assertEquals(this.r.isCorrect(), true);
 	}
-	
+
 	@Test
-	public void testConstructeurSansParametre(){
-		Reponse r=new Reponse();
-		assertEquals("",r.getReponse());
-		assertEquals(false,r.isCorrect());
+	public void testConstructeurSansParametre() {
+		this.r = new Reponse();
+		assertEquals("", this.r.getReponse());
+		assertEquals(false, this.r.isCorrect());
 	}
-	
-	
+
 }
