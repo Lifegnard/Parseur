@@ -1,7 +1,9 @@
 package runer;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.Reader;
-import java.io.StringReader;
 
 import parseurImpl.Parser;
 import parseurImpl.Question;
@@ -12,15 +14,20 @@ public class lanceur {
 		Parser p = new Parser();
 		Question q = null;
 
-		Reader r = new StringReader("truc");
+		File fTest = new File("test.txt");
+		Reader r;
 		try {
+			r = new FileReader(fTest);
 			p.parse(r);
 			q = p.getQuestion();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (FileNotFoundException e1) {
+			System.out.println("File Not Found !");
+			e1.printStackTrace();
+		} catch (Exception e1) {
+			System.out.println("Erreur de parsing !");
+			e1.printStackTrace();
 		}
-		
+
 		System.out.println(q);
 	}
 

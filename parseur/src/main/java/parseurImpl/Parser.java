@@ -7,7 +7,7 @@ import java.util.List;
 public class Parser {
 	private Question question;
 	private QuizReaderImpl pReader;
-	
+
 	public Question getQuestion() {
 		return question;
 	}
@@ -21,12 +21,13 @@ public class Parser {
 		this.question = new Question();
 	}
 
-	public void parse(Reader reader) throws Exception { 
+	public void parse(Reader reader) throws Exception {
 		List<Reponse> propositionsDeReponse = new ArrayList<Reponse>();
 		Reponse reponseCourante = null;
-		
+
 		try {
-			this.question.setIntituleQuestion(this.pReader.lireIntitule(reader));
+			this.question
+					.setIntituleQuestion(this.pReader.lireIntitule(reader));
 			this.pReader.lireTypeQuestion(reader);
 			while ((reponseCourante = this.pReader.lireReponse(reader)) != null) {
 				propositionsDeReponse.add(reponseCourante);

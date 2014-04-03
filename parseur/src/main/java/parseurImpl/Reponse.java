@@ -30,4 +30,8 @@ public class Reponse {
 		this.isCorrect = false;
 	}
 
+	public String toString() {
+		return this.reponse + " - correcte : " + this.isCorrect;
+	}
+
 }

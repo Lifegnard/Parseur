@@ -31,7 +31,7 @@ public class Question {
 		this.intituleQuestion = "";
 		this.propositionReponses = null;
 	}
-	
+
 	public String toString() {
 		return "Intitulé de la question : " + this.intituleQuestion
 				+ "\nPropositions de reponses :\n" + propositionReponses;
