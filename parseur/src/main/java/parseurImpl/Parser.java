@@ -5,23 +5,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Parser {
-	private QuizReaderImpl r;
-
-	public Parser() {
-		this.r = new QuizReaderImpl();
+	private Question question;
+	private QuizReaderImpl pReader;
+	
+	public Question getQuestion() {
+		return question;
 	}
 
-	public void parse(Reader reader) throws Exception {
-		Question nouvelleQuestion = new Question();
-		List<Reponse> propositionsDeReponses = new ArrayList<Reponse>();
-		Reponse reponseTmp = null;
+	public QuizReaderImpl getpReader() {
+		return pReader;
+	}
+
+	public Parser() {
+		this.pReader = new QuizReaderImpl();
+		this.question = new Question();
+	}
+
+	public void parse(Reader reader) throws Exception { 
+		List<Reponse> propositionsDeReponse = new ArrayList<Reponse>();
+		Reponse reponseCourante = null;
+		
 		try {
-			nouvelleQuestion.setIntituleQuestion(this.r.lireIntitule(reader));
-			this.r.lireTypeQuestion(reader);
-			while ((reponseTmp = this.r.lireReponse(reader)) != null) {
-				propositionsDeReponses.add(reponseTmp);
+			this.question.setIntituleQuestion(this.pReader.lireIntitule(reader));
+			this.pReader.lireTypeQuestion(reader);
+			while ((reponseCourante = this.pReader.lireReponse(reader)) != null) {
+				propositionsDeReponse.add(reponseCourante);
 			}
-			nouvelleQuestion.setPropositionReponses(propositionsDeReponses);
+			this.question.setPropositionReponses(propositionsDeReponse);
 		} catch (Exception e) {
 			e.toString();
 		}
