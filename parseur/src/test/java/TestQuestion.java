@@ -1,9 +1,6 @@
 import static org.junit.Assert.*;
-
 import java.util.ArrayList;
-
 import org.junit.Test;
-
 import parseurImpl.Question;
 import parseurImpl.Reponse;
 

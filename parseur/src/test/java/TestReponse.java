@@ -1,7 +1,5 @@
 import static org.junit.Assert.*;
-
 import org.junit.Test;
-
 import parseurImpl.Reponse;
 
 public class TestReponse {
