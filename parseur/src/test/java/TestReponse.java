@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -7,12 +8,23 @@ import parseurImpl.Reponse;
 
 public class TestReponse {
 	private Reponse r;
-
+	private Reponse rtrue; 
+	private Reponse rfalse;
+	
 	@Before
 	public void setUp() throws Exception {
 		this.r = new Reponse("Test", true);
+		rtrue = new Reponse("Test reponse correct", true);
+		rfalse = new Reponse("Test reponse non correct", false);
 	}
 
+	@After
+	public void TearsDown() throws Exception {
+		r = null;
+		rtrue = null;
+		rfalse = null;
+	}
+	
 	@Test
 	public void testGetReponse() {
 		assertEquals("Test", this.r.getReponse());
@@ -26,8 +38,6 @@ public class TestReponse {
 
 	@Test
 	public void testIsCorrect() {
-		Reponse rtrue = new Reponse("Test reponse correct", true);
-		Reponse rfalse = new Reponse("Test reponse non correct", false);
 		assertEquals(true, rtrue.isCorrect());
 		assertEquals(false, rfalse.isCorrect());
 	}
