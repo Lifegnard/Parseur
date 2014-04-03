@@ -7,6 +7,11 @@ import java.util.List;
 public class Parser {
 	private Question question;
 	private QuizReaderImpl pReader;
+	
+	public Parser() {
+		this.pReader = new QuizReaderImpl();
+		this.question = new Question();
+	}
 
 	public Question getQuestion() {
 		return question;
@@ -16,10 +21,6 @@ public class Parser {
 		return pReader;
 	}
 
-	public Parser() {
-		this.pReader = new QuizReaderImpl();
-		this.question = new Question();
-	}
 
 	public void parse(Reader reader) throws Exception {
 		List<Reponse> propositionsDeReponse = new ArrayList<Reponse>();
