@@ -78,6 +78,7 @@ public class TestQuestion {
 	public void testConstructeurSansParametre() {
 		//Question questionTest2=new Question();
 		
+		
 		assertEquals("",questionTest2.getIntituleQuestion());
 		assertEquals(null,questionTest2.getPropositionReponses());
 	}
