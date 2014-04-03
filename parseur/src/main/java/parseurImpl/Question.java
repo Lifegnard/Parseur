@@ -14,7 +14,7 @@ public class Question {
 	public Question() {
 		this.intituleQuestion = "";
 		this.propositionReponses = null;
-	}
+	} 
 
 	public String getIntituleQuestion() {
 		return intituleQuestion;
