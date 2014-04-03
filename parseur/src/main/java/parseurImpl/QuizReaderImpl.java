@@ -5,12 +5,12 @@ import java.io.Reader;
 public class QuizReaderImpl implements QuizReader {
 
 	public String lireIntitule(Reader flux) throws Exception {
-		int characterCourant;
+		char characterCourant;
 		boolean debutIntitule = false;
 		boolean finIntitule = false;
 		String intitule = "";
 
-		while ((characterCourant = flux.read()) != -1) {
+		while ((characterCourant = (char) flux.read()) != 65535 || (characterCourant = (char) flux.read()) != -1) {
 			if (characterCourant == '{' && !debutIntitule) {
 				debutIntitule = true;
 			} else if (characterCourant == '|' && !finIntitule) {
@@ -25,12 +25,12 @@ public class QuizReaderImpl implements QuizReader {
 	}
 
 	public String lireTypeQuestion(Reader flux) throws Exception {
-		int characterCourant;
+		char characterCourant;
 		boolean debutTypeQuestion = false;
 		boolean finTypeQuestion = false;
 		String type = "";
 
-		while ((characterCourant = flux.read()) != -1) {
+		while ((characterCourant = (char) flux.read()) != 65535 || (characterCourant = (char) flux.read()) != -1) {
 			if (characterCourant == '"' && !debutTypeQuestion) {
 				debutTypeQuestion = true;
 			} else if (characterCourant == '"' && !finTypeQuestion) {
@@ -45,24 +45,24 @@ public class QuizReaderImpl implements QuizReader {
 	}
 
 	public Reponse lireReponse(Reader flux) throws Exception {
-		int characterCourant;
+		char characterCourant;
 		boolean debutReponse = false;
 		boolean finReponse = false;
 		String intituleReponse = "";
 		Reponse reponse = new Reponse();
 
-		while ((characterCourant = flux.read()) != -1) {
+		while ((characterCourant = (char) flux.read()) != 65535 || (characterCourant = (char) flux.read()) != -1) {
 			if (characterCourant == '-' && !debutReponse) {
 				debutReponse = true;
 				reponse.setCorrect(false);
 			} else if (characterCourant == '+' && !debutReponse) {
 				debutReponse = true;
 				reponse.setCorrect(true);
-			} else if (characterCourant == '\n' && !finReponse) {
+			} else if (characterCourant == '.' && !finReponse && debutReponse) {
 				finReponse = true;
 				reponse.setReponse(intituleReponse);
 				return reponse;
-			} else if (debutReponse && !finReponse) {
+			} else if (debutReponse && !finReponse && characterCourant != '\n') {
 				intituleReponse += characterCourant;
 			}
 		}
