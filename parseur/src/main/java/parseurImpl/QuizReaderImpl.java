@@ -30,16 +30,18 @@ public class QuizReaderImpl implements QuizReader {
 		boolean debutTypeQuestion = false;
 		boolean finTypeQuestion = false;
 		String type = "";
-
-		while ((characterCourant = (char) flux.read()) != 65535 && (characterCourant = (char) flux.read()) != -1) {
+		characterCourant = (char) flux.read();
+		
+		while (characterCourant != 65535 && characterCourant != -1) {
 			if (characterCourant == '"' && !debutTypeQuestion) {
 				debutTypeQuestion = true;
-			} else if (characterCourant == '"' && !finTypeQuestion) {
+			} else if (characterCourant == '"' && !finTypeQuestion && debutTypeQuestion) {
 				finTypeQuestion = true;
 				return type;
 			} else if (debutTypeQuestion && !finTypeQuestion) {
 				type += characterCourant;
 			}
+			characterCourant = (char) flux.read();
 		}
 		throw new Exception(
 				"Probleme de syntaxe dans la construction de la question.");
