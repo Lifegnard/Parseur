@@ -13,7 +13,7 @@ public class QuizReaderImpl implements QuizReader {
 		while (characterCourant!= 65535 && characterCourant!= -1) {
 			if (characterCourant == '{' && !debutIntitule) {
 				debutIntitule = true;
-			} else if (characterCourant == '|' && !finIntitule) {
+			} else if (characterCourant == '|' && !finIntitule && debutIntitule) {
 				finIntitule = true;
 				return intitule;
 			} else if (debutIntitule && !finIntitule) {
