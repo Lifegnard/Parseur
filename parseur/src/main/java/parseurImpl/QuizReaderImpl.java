@@ -9,8 +9,8 @@ public class QuizReaderImpl implements QuizReader {
 		boolean debutIntitule = false;
 		boolean finIntitule = false;
 		String intitule = "";
-
-		while ((characterCourant = (char) flux.read()) != 65535 || (characterCourant = (char) flux.read()) != -1) {
+		characterCourant = (char) flux.read();
+		while (characterCourant!= 65535 && characterCourant!= -1) {
 			if (characterCourant == '{' && !debutIntitule) {
 				debutIntitule = true;
 			} else if (characterCourant == '|' && !finIntitule) {
@@ -19,6 +19,7 @@ public class QuizReaderImpl implements QuizReader {
 			} else if (debutIntitule && !finIntitule) {
 				intitule += characterCourant;
 			}
+			characterCourant = (char) flux.read();
 		}
 		throw new Exception(
 				"Probleme de syntaxe dans la construction de la question.");
@@ -30,7 +31,7 @@ public class QuizReaderImpl implements QuizReader {
 		boolean finTypeQuestion = false;
 		String type = "";
 
-		while ((characterCourant = (char) flux.read()) != 65535 || (characterCourant = (char) flux.read()) != -1) {
+		while ((characterCourant = (char) flux.read()) != 65535 && (characterCourant = (char) flux.read()) != -1) {
 			if (characterCourant == '"' && !debutTypeQuestion) {
 				debutTypeQuestion = true;
 			} else if (characterCourant == '"' && !finTypeQuestion) {
@@ -51,7 +52,7 @@ public class QuizReaderImpl implements QuizReader {
 		String intituleReponse = "";
 		Reponse reponse = new Reponse();
 
-		while ((characterCourant = (char) flux.read()) != 65535 || (characterCourant = (char) flux.read()) != -1) {
+		while ((characterCourant = (char) flux.read()) != 65535 && (characterCourant = (char) flux.read()) != -1) {
 			if (characterCourant == '-' && !debutReponse) {
 				debutReponse = true;
 				reponse.setCorrect(false);
