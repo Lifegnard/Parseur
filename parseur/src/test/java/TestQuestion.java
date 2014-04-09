@@ -70,5 +70,13 @@ public class TestQuestion {
 		assertEquals("",questionTest2.getIntituleQuestion());
 		assertEquals(null,questionTest2.getPropositionReponses());
 	}
+	
+	@Test
+	public void testToString(){
+		questionTest=new Question();
+		String expected="Intitule de la question : \nPropositions de reponses :\n";
+		assertEquals(expected, this.questionTest.toString());
+	}
+	
 
 }
