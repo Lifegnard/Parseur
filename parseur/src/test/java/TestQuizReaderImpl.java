@@ -11,6 +11,7 @@ import org.junit.Test;
 import parseurImpl.Parser;
 import parseurImpl.QuizReaderImpl;
 import parseurImpl.Reponse;
+import parseurImpl.Type;
 
 public class TestQuizReaderImpl {
 
@@ -103,7 +104,7 @@ public class TestQuizReaderImpl {
 	@Test
 	public void testExceptionTypeQuestionReaderNonConforme() throws Exception{
 		boolean error = false;
-		Reader reader = new StringReader("d");
+		Reader reader = new StringReader("()");
 		  try {
 			  pReader.lireTypeQuestion(reader);
 			  fail("Une exception aurait du être levé");
@@ -118,7 +119,7 @@ public class TestQuizReaderImpl {
 	@Test
 	public void testExceptionTypeQuestionReaderNonConformeAbsenceFirstGuillemet() throws Exception{
 		boolean error = false;
-		Reader reader = new StringReader("d\"");
+		Reader reader = new StringReader("()\"");
 		  try {
 			  pReader.lireTypeQuestion(reader);
 			  fail("Une exception aurait du être levé");
@@ -133,7 +134,7 @@ public class TestQuizReaderImpl {
 	@Test
 	public void testExceptionTypeQuestionReaderNonConformeAbsenceSecondGuillemet() throws Exception{
 		boolean error = false;
-		Reader reader = new StringReader("\"d");
+		Reader reader = new StringReader("\"()");
 		  try {
 			  pReader.lireTypeQuestion(reader);
 			  fail("Une exception aurait du être levé");
@@ -159,20 +160,50 @@ public class TestQuizReaderImpl {
 	}
 	
 	
-	// Test lorsqu'on rédige un type de question valide
+	// Test lorsqu'on rédige un type de question single choice
 	// Doit renvoyer la chaine de caractère correspondant aux type de question
 	@Test
-	public void testExceptionTypeQuestionReaderValide() throws Exception{
+	public void testTypeQuestionSingleReaderValide() throws Exception{
 		boolean error = false;
 		Reader reader = new StringReader("\"()\"");
-		String result = "";
+		Type result = Type.MULTIPLE;
 		  try {
 			  result = pReader.lireTypeQuestion(reader);
 		  } catch (Exception ex) {	
 			  error = true;
 		  }
 		  assertFalse(error);
-		  assertEquals("()",result);
+		  assertEquals(Type.SINGLE,result);
+	}
+	
+	// Test lorsqu'on rédige un type de question multiple choice
+	// Doit renvoyer la chaine de caractère correspondant aux type de question
+	@Test
+	public void testTypeQuestionMultipleReaderValide() throws Exception{
+		boolean error = false;
+		Reader reader = new StringReader("\"[]\"");
+		Type result = Type.SINGLE;
+		  try {
+			  result = pReader.lireTypeQuestion(reader);
+		  } catch (Exception ex) {	
+			  error = true;
+		  }
+		  assertFalse(error);
+		  assertEquals(Type.MULTIPLE,result);
+	}
+	
+	// Test lorsqu'on rédige un type de question inexistant
+	// Doit renvoyer la chaine de caractère correspondant aux type de question
+	@Test
+	public void testTypeQuestionInexistantReader() throws Exception{
+		boolean error = false;
+		Reader reader = new StringReader("\"type\"");
+		  try {
+			  pReader.lireTypeQuestion(reader);
+		  } catch (Exception ex) {	
+			  error = true;
+		  }
+		  assertTrue(error);
 	}
 	
 	// Test lorsqu'on rédige une reponse fausse

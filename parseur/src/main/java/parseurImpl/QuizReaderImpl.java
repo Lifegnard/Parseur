@@ -25,11 +25,12 @@ public class QuizReaderImpl implements QuizReader {
 				"Probleme de syntaxe dans la construction de la question.");
 	}
 
-	public String lireTypeQuestion(Reader flux) throws Exception {
+	public Type lireTypeQuestion(Reader flux) throws Exception {
 		char characterCourant;
 		boolean debutTypeQuestion = false;
 		boolean finTypeQuestion = false;
 		String type = "";
+		Type typeQuestion;
 		characterCourant = (char) flux.read();
 		
 		while (characterCourant != 65535 && characterCourant != -1) {
@@ -37,7 +38,18 @@ public class QuizReaderImpl implements QuizReader {
 				debutTypeQuestion = true;
 			} else if (characterCourant == '"' && !finTypeQuestion && debutTypeQuestion) {
 				finTypeQuestion = true;
-				return type;
+				if (type.equals("()")) {
+					typeQuestion= Type.SINGLE;
+					return typeQuestion;
+				}
+				else if (type.equals("[]")) {
+					typeQuestion = Type.MULTIPLE;
+					return typeQuestion;
+				}
+				else {
+					throw new Exception(
+							"Probleme de syntaxe dans la construction de la question.");
+				}
 			} else if (debutTypeQuestion && !finTypeQuestion) {
 				type += characterCourant;
 			}
