@@ -35,7 +35,7 @@ public class Parser {
 			}
 			this.question.setPropositionReponses(propositionsDeReponse);
 		} catch (Exception e) {
-			e.toString();
+			throw new Exception(e.toString());
 		}
 	}
 }
