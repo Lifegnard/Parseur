@@ -63,5 +63,12 @@ public class TestReponse {
 		assertEquals("", this.r.getReponse());
 		assertEquals(false, this.r.isCorrect());
 	}
+	
+	@Test
+	public void testToString() {
+		this.r = new Reponse("reponse",true);
+		String expected="reponse - correcte : true" ;
+		assertEquals(expected, this.r.toString());
+	}
 
 }
