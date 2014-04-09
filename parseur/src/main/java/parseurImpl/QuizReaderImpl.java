@@ -53,8 +53,8 @@ public class QuizReaderImpl implements QuizReader {
 		boolean finReponse = false;
 		String intituleReponse = "";
 		Reponse reponse = new Reponse();
-
-		while ((characterCourant = (char) flux.read()) != 65535 && (characterCourant = (char) flux.read()) != -1) {
+		characterCourant = (char) flux.read();
+		while (characterCourant != 65535 && characterCourant != -1) {
 			if (characterCourant == '-' && !debutReponse) {
 				debutReponse = true;
 				reponse.setCorrect(false);
@@ -68,6 +68,7 @@ public class QuizReaderImpl implements QuizReader {
 			} else if (debutReponse && !finReponse && characterCourant != '\n') {
 				intituleReponse += characterCourant;
 			}
+			characterCourant = (char) flux.read();
 		}
 		return null;
 	}

@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import parseurImpl.Parser;
 import parseurImpl.QuizReaderImpl;
+import parseurImpl.Reponse;
 
 public class TestQuizReaderImpl {
 
@@ -154,6 +155,80 @@ public class TestQuizReaderImpl {
 		  }
 		  assertFalse(error);
 		  assertEquals("()",result);
+	}
+	
+	
+	@Test
+	public void testReponseFausseReaderValide() throws Exception{
+		boolean error = false;
+		Reader reader = new StringReader("-faux.");
+		Reponse rep = new Reponse();
+		  try {
+			  rep = pReader.lireReponse(reader);
+		  } catch (Exception ex) {	
+			  error = true;
+		  }
+		  assertFalse(error);
+		  assertEquals("faux",rep.getReponse());
+		  assertFalse(rep.isCorrect());
+	}
+	
+	@Test
+	public void testReponseVraiReaderValide() throws Exception{
+		boolean error = false;
+		Reader reader = new StringReader("+vrai.");
+		Reponse rep = new Reponse();
+		  try {
+			  rep = pReader.lireReponse(reader);
+		  } catch (Exception ex) {	
+			  error = true;
+		  }
+		  assertFalse(error);
+		  assertEquals("vrai",rep.getReponse());
+		  assertTrue(rep.isCorrect());
+	}
+	
+	@Test
+	public void testReponseReaderAbsencePoint() throws Exception{
+		boolean error = false;
+		Reader reader = new StringReader("+vrai");
+		Reponse rep = new Reponse();
+		  try {
+			  rep = pReader.lireReponse(reader);
+		  } catch (Exception ex) {	
+			  error = true;
+		  }
+		  assertFalse(error);
+		  assertEquals(null,rep);
+	}
+	
+	@Test
+	public void testReponseReaderAbsenceSigne() throws Exception{
+		boolean error = false;
+		Reader reader = new StringReader("vrai.");
+		Reponse rep = new Reponse();
+		  try {
+			  rep = pReader.lireReponse(reader);
+		  } catch (Exception ex) {	
+			  error = true;
+		  }
+		  assertFalse(error);
+		  assertEquals(null,rep);
+	}
+	
+	@Test
+	public void testReponseReaderSautDeLigne() throws Exception{
+		boolean error = false;
+		Reader reader = new StringReader("+vrai\nsaut.");
+		Reponse rep = new Reponse();
+		  try {
+			  rep = pReader.lireReponse(reader);
+		  } catch (Exception ex) {	
+			  error = true;
+		  }
+		  assertFalse(error);
+		  assertEquals("vraisaut",rep.getReponse());
+		  assertTrue(rep.isCorrect());
 	}
 
 }
