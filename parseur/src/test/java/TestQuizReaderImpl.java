@@ -89,5 +89,71 @@ public class TestQuizReaderImpl {
 	}
 	
 
+	@Test
+	public void testExceptionTypeQuestionReaderNonConforme() throws Exception{
+		boolean error = false;
+		Reader reader = new StringReader("d");
+		  try {
+			  pReader.lireTypeQuestion(reader);
+			  fail("Une exception aurait du être levé");
+		  } catch (Exception ex) {	
+			  error = true;
+		  }
+		  assertTrue(error);
+	}
+	
+	@Test
+	public void testExceptionTypeQuestionReaderNonConformeAbsenceFirstGuillemet() throws Exception{
+		boolean error = false;
+		Reader reader = new StringReader("d\"");
+		  try {
+			  pReader.lireTypeQuestion(reader);
+			  fail("Une exception aurait du être levé");
+		  } catch (Exception ex) {	
+			  error = true;
+		  }
+		  assertTrue(error);
+	}
+	
+	@Test
+	public void testExceptionTypeQuestionReaderNonConformeAbsenceSecondGuillemet() throws Exception{
+		boolean error = false;
+		Reader reader = new StringReader("\"d");
+		  try {
+			  pReader.lireTypeQuestion(reader);
+			  fail("Une exception aurait du être levé");
+		  } catch (Exception ex) {	
+			  error = true;
+		  }
+		  assertTrue(error);
+	}
+	
+	@Test
+	public void testExceptionTypeQuestionReaderVide() throws Exception{
+		boolean error = false;
+		Reader reader = new StringReader("");
+		  try {
+			  pReader.lireTypeQuestion(reader);
+			  fail("Une exception aurait du être levé");
+		  } catch (Exception ex) {	
+			  error = true;
+		  }
+		  assertTrue(error);
+	}
+	
+	
+	@Test
+	public void testExceptionTypeQuestionReaderValide() throws Exception{
+		boolean error = false;
+		Reader reader = new StringReader("\"()\"");
+		String result = "";
+		  try {
+			  result = pReader.lireTypeQuestion(reader);
+		  } catch (Exception ex) {	
+			  error = true;
+		  }
+		  assertFalse(error);
+		  assertEquals("()",result);
+	}
 
 }
